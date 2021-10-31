@@ -13,9 +13,13 @@ int main() {
     int n;
     scanf("%d", &n);
     
-    time_t start = time(NULL);
+    time_t start;
+    time(&start);
+    
     fibo(n);
-    time_t end = time(NULL);
+    
+    time_t end;
+    time(&end);
 
     printf("diff time: %f\n", difftime(end, start));
 
