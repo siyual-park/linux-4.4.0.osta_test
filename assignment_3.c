@@ -17,7 +17,7 @@ int main() {
     fibo(n);
     time_t end = time(NULL);
 
-    printf("diff time: %f", difftime(start, end));
+    printf("diff time: %f\n", difftime(end, start));
 
     return 0;
 }
