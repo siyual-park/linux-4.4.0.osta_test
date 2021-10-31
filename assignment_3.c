@@ -1,27 +1,15 @@
 #include <stdio.h>
-#include <time.h>
-
-int fibo(int n) {
-	if (n <= 1) {
-        return n;
-    }
-    
-    return fibo(n - 1) + fibo(n - 2);
-}
+#include <sys/syscall.h>
 
 int main() {
-    int n;
-    scanf("%d", &n);
+    int pid, operator;
+    scanf("%d %d", &pid, &operator);
     
-    time_t start;
-    time(&start);
+    if (operator == 0) {
+        syscall(326, pid);
+    } else {
+        syscall(327, pid);
+    }
     
-    fibo(n);
-    
-    time_t end;
-    time(&end);
-
-    printf("diff time: %f\n", difftime(end, start));
-
     return 0;
 }
