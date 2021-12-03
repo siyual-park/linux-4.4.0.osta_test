@@ -9,7 +9,7 @@ def readLines(path):
 
         where = None
 
-        fd   = fp.fileno()
+        fd = fp.fileno()
         flag = fcntl.fcntl(fd, fcntl.F_GETFL)
         fcntl.fcntl(fd, fcntl.F_SETFL, flag | os.O_NONBLOCK)
 
