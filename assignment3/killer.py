@@ -36,11 +36,14 @@ if __name__ == "__main__":
     prefix = "memory size excessed: "
     for line in readLines("/dev/kmsg"):
         line = str(line)
-        index = line.find(prefix)
+        print(line)
 
+        index = line.find(prefix)
+        
         if index >= 0:
             pid = line[index+len(prefix):]
             pid = int(pid)
+            print(pid)
             os.kill(int(pid), signal.SIGKILL)
 
             
