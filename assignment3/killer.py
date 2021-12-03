@@ -32,6 +32,7 @@ def readLines(path):
 
 if __name__ == "__main__":
     import sys
+    import signal
 
     prefix = "memory size excessed: "
     for line in readLines("/dev/kmsg"):
